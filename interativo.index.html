@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jogos Pixel – Experiência Interativa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f0f1a;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px 10px;
+      background: linear-gradient(90deg, #4b0082, #1e90ff);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+
+    header p {
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1c1c2e;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 25px rgba(30,144,255,0.6);
+    }
+
+    .pixel {
+      font-size: 60px;
+      image-rendering: pixelated;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1e90ff;
+      color: #fff;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #63b3ff;
+    }
+
+    #demo {
+      margin-top: 30px;
+      font-size: 1.2em;
+      min-height: 40px;
+    }
+
+    footer {
+      padding: 20px;
+      background: #111;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎮 Mundo dos Jogos Pixel</h1>
+    <p>Explore o estilo pixel art e interaja com jogos clássicos</p>
+  </header>
+
+  <section>
+    <h2>Exemplos de Jogos Pixel</h2>
+
+    <div class="games">
+      <div class="card">
+        <div class="pixel">❤️</div>
+        <h3>Undertale</h3>
+        <p>Um RPG emocional com escolhas que realmente importam.</p>
+        <button onclick="mostrar('Undertale foca em narrativa, música marcante e decisões do jogador.')">Explorar</button>
+      </div>
+
+      <div class="card">
+        <div class="pixel">💙</div>
+        <h3>Deltarune</h3>
+        <p>Aventura misteriosa no mesmo universo, com novos personagens.</p>
+        <button onclick="mostrar('Deltarune expande o universo com batalhas estratégicas e trilha sonora épica.')">Explorar</button>
+      </div>
+
+      <div class="card">
+        <div class="pixel">⚡</div>
+        <h3>Pokémon</h3>
+        <p>Captura, batalhas e exploração em um mundo pixelado.</p>
+        <button onclick="mostrar('Pokémon popularizou os jogos pixel no mundo inteiro.')">Explorar</button>
+      </div>
+    </div>
+
+    <div id="demo"></div>
+  </section>
+
+  <section>
+    <h2>Mini Interação</h2>
+    <p>Clique no botão para simular uma ação de jogo pixel:</p>
+    <button onclick="acaoPixel()">Atacar</button>
+    <p id="acao"></p>
+  </section>
+
+  <footer>
+    <p>Site educativo – Jogos Pixel 🎨</p>
+  </footer>
+
+  <script>
+    function mostrar(texto) {
+      document.getElementById('demo').innerText = texto;
+    }
+
+    function acaoPixel() {
+      const acoes = [
+        '⚔️ Ataque crítico!',
+        '🛡️ Defesa perfeita!',
+        '✨ Magia lançada!',
+        '❤️ Cura realizada!'
+      ];
+      const aleatoria = acoes[Math.floor(Math.random() * acoes.length)];
+      document.getElementById('acao').innerText = aleatoria;
+    }
+  </script>
+
+</body>
+</html>
